@@ -5,10 +5,11 @@ export const Containerside = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  height: 1000px;
   width: 250px;
   padding: 20px;
-  margin-left: 80px;
+  margin-left: 50px;
+  position: absolute;
+  bottom: 30%;
 `;
 
 export const Sidebar = styled.div`

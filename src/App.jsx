@@ -1,14 +1,12 @@
 import React from 'react';
 import GlobalStyles from './globalStyles/GlobalStyles';
-import Navbar from './components/Navbar/Navbar';
-import Sidebar from './components/Sidebar/Sidebar';
+import Homepage from './pages/Homepage/Homepage';
 
 function App() {
   return (
     <>
       <GlobalStyles />
-      <Navbar />
-      <Sidebar />
+      <Homepage />
     </>
   );
 }

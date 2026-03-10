@@ -9,6 +9,7 @@ export default createGlobalStyle`
 
   body {
     background: #0f1214;
+    padding: 0 0 10px 0;
   }
 
   p {

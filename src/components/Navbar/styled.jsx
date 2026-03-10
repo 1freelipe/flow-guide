@@ -9,6 +9,7 @@ export const Containernav = styled.header`
   justify-content: space-between;
   padding: 12px 28px;
   border-bottom: 1px solid #1d2126;
+  margin-bottom: 10px;
 `;
 
 export const NavLinks = styled.nav`
