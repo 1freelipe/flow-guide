@@ -26,6 +26,7 @@ export const Logo = styled.div`
   justify-content: center;
   position: relative;
   font-size: 15px;
+  cursor: pointer;
 
   .secondTitle {
     position: absolute;
