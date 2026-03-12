@@ -8,6 +8,8 @@ export default function PagesRoutes() {
     <Routes>
       <Route path="/" element={<Navigate to="/guia" replace />} />
       <Route path="/guia" element={<Unicpage />} />
+      <Route path="/guia/:modulo/:categoria" element={<Unicpage />} />
+      <Route path="/guia/:modulo/:categoria/:operacao" element={<Unicpage />} />
     </Routes>
   );
 }

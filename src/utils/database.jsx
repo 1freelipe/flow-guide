@@ -1,6 +1,6 @@
 const database = {
   fiscal: {
-    modulo: 'Departamento Fiscal',
+    modulo: 'Fiscal',
     categories: [
       {
         id: 'emissão-cte',
@@ -11,7 +11,7 @@ const database = {
           { id: 'cte-subcontratação', title: 'CT-e de Subcontratação' },
         ],
       },
-      { id: 'mdf-normal', title: 'Emissão de MDF-e' },
+      { id: 'mdf-e', title: 'Emissão de MDF-e' },
     ],
   },
   faturamento: {

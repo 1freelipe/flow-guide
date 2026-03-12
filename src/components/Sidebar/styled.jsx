@@ -3,11 +3,11 @@ import styled from 'styled-components';
 export const Containerside = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
   flex-direction: column;
   width: 250px;
   padding: 20px;
-  margin-left: 50px;
+  margin-left: 5px;
   position: absolute;
   bottom: 30%;
 `;
@@ -16,18 +16,17 @@ export const Sidebar = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: auto 0;
-  width: 150px;
+  width: 250px;
   height: 250px;
   border-right: 1px solid #c9c9c9;
 `;
 
 export const NavList = styled.ul`
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   flex-direction: column;
-  gap: 20px;
+  gap: 35px;
 `;
 
 export const List = styled.li`
@@ -40,6 +39,15 @@ export const List = styled.li`
   font-style: normal;
   position: relative;
   cursor: pointer;
+
+  .link {
+    text-decoration: none;
+    color: #fffff0;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    width: 100%;
+  }
 
   &::before {
     content: '';

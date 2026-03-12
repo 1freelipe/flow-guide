@@ -12,7 +12,7 @@ export default function DropDownItem({ moduleTitle, categories }) {
 
   const handleNavigate = (id) => {
     setIsOpen(false);
-    navigate(`/guia/${id}`);
+    navigate(`/guia/${moduleTitle.toLowerCase()}/${id}`);
   };
 
   const toggleDropDown = () => {
