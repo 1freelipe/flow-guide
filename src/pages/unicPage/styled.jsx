@@ -12,6 +12,7 @@ export const Container = styled.section`
   border: 2px solid #1d2126;
   border-radius: 9px;
   gap: 30px;
+  position: relative;
 `;
 
 export const WrapperTitle = styled.div`
@@ -21,7 +22,10 @@ export const WrapperTitle = styled.div`
   flex-direction: column;
   width: 100%;
   margin: 0 auto;
-  height: 250px;
+  height: 150px;
+  gap: 5px;
+  position: absolute;
+  top: 0;
 `;
 
 export const Title = styled.h1`
@@ -39,6 +43,10 @@ export const SubTitle = styled.h2`
   color: #fffff0;
   font-size: 20px;
   text-align: center;
+
+  span {
+    text-decoration: underline;
+  }
 `;
 
 export const WrapperContent = styled.div`
@@ -47,10 +55,26 @@ export const WrapperContent = styled.div`
   justify-content: flex-start;
   flex-direction: column;
   gap: 20px;
-  width: 95%;
+  width: 90%;
 `;
 
 export const MiniTitle = styled.h3`
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-style: italic;
+  color: #fffff0;
+  font-size: 20px;
+`;
+
+export const StepList = styled.ul`
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 20px;
+`;
+
+export const StepItem = styled.li`
   font-family: 'Poppins', sans-serif;
   font-weight: 300;
   font-style: normal;

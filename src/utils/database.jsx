@@ -10,11 +10,30 @@ const database = {
             id: 'cte-normal',
             title: 'CT-e Normal',
             suboperations: [
-              { id: 'opt-fracionado', title: 'OPT Fracionado Geral' },
+              {
+                id: 'opt-fracionado',
+                title: 'OPT Fracionado Geral',
+                steps: [
+                  {
+                    id: 1,
+                    instruction:
+                      'Antes de mais nada, primeiro devemos consultar todas as notas e verificar se todas possuem o mesmo Remetente, Destinatário e CFOP.',
+                  },
+                  {
+                    id: 2,
+                    instruction:
+                      'Pós conferência, se todas as informações forem iguais, seguiremos pela ODT (Ordem de transporte) -> A partir de uma tabela de preço.',
+                  },
+                ],
+              },
               { id: 'opt-rateio', title: 'OPT Rateio' },
             ],
           },
-          { id: 'cte-redespacho', title: 'CT-e de Redespacho' },
+          {
+            id: 'cte-redespacho',
+            title: 'CT-e de Redespacho',
+            steps: [{ id: 1, instruction: 'qwopdkqpow' }],
+          },
           { id: 'cte-subcontratação', title: 'CT-e de Subcontratação' },
           { id: 'cte-devolução', title: 'CT-e de Devolução' },
           { id: 'cte-complementar', title: 'CT-e Complementar' },

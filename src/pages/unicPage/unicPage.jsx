@@ -17,6 +17,9 @@ export default function Unicpage() {
     (sub) => sub.id === suboperacao,
   );
 
+  const stepGuide = subOperationsAct?.steps || operationsAct.steps || [];
+  console.log(stepGuide);
+
   return (
     <>
       <Navbar />
@@ -31,13 +34,23 @@ export default function Unicpage() {
 
           <home.SubTitle>
             Abaixo, contém o passo a passo orientado de como emitir um{' '}
-            {operationsAct?.title}, e no final, terá um vídeo do mesmo
-            processo.{' '}
+            <span>{operationsAct?.title}</span>, e no final, terá um vídeo do
+            mesmo processo.{' '}
           </home.SubTitle>
         </home.WrapperTitle>
 
+        <home.MiniTitle>Passo a Passo</home.MiniTitle>
+
         <home.WrapperContent>
-          <home.MiniTitle></home.MiniTitle>
+          {stepGuide.length > 0 ? (
+            <home.StepList>
+              {stepGuide.map((stp) => (
+                <home.StepItem key={stp.id}>{stp.instruction}</home.StepItem>
+              ))}
+            </home.StepList>
+          ) : (
+            <p>Guia ainda em construção</p>
+          )}
         </home.WrapperContent>
       </home.Container>
     </>
