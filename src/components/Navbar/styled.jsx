@@ -39,7 +39,7 @@ export const List = styled.ul`
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 30px;
+  gap: 20px;
 `;
 
 export const Title = styled.h1`
@@ -63,14 +63,14 @@ export const MenuButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 20px;
+  gap: 10px;
   font-family: 'Poppins', sans-serif;
   font-weight: 500;
   font-style: normal;
   color: #fffff0;
   position: relative;
   cursor: pointer;
-  font-size: 17px;
+  font-size: 15px;
 
   &::after {
     content: '';
