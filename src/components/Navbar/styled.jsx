@@ -40,6 +40,12 @@ export const List = styled.ul`
   align-items: center;
   justify-content: center;
   gap: 20px;
+
+  .theme {
+    color: #fffff0;
+    cursor: pointer;
+    font-size: 22px;
+  }
 `;
 
 export const Title = styled.h1`

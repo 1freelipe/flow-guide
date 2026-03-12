@@ -1,4 +1,5 @@
 import React from 'react';
+import { LuSun } from 'react-icons/lu';
 
 import * as nav from './styled';
 
@@ -15,6 +16,7 @@ export default function Navbar() {
 
       <nav.NavLinks>
         <nav.List>
+          <LuSun className="theme" title="Tema Claro/Escuro" />
           {Object.entries(database).map(([keyModule, dataModule]) => (
             <DropDownItem
               key={keyModule}

@@ -17,7 +17,7 @@ export default function Unicpage() {
     (sub) => sub.id === suboperacao,
   );
 
-  const stepGuide = subOperationsAct?.steps || operationsAct.steps || [];
+  const stepGuide = subOperationsAct?.steps || operationsAct?.steps || [];
   console.log(stepGuide);
 
   return (
@@ -42,7 +42,7 @@ export default function Unicpage() {
         <home.MiniTitle>Passo a Passo</home.MiniTitle>
 
         <home.WrapperContent>
-          {stepGuide.length > 0 ? (
+          {stepGuide?.length > 0 ? (
             <home.StepList>
               {stepGuide.map((stp) => (
                 <home.StepItem key={stp.id}>{stp.instruction}</home.StepItem>
