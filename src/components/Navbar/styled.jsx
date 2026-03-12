@@ -42,7 +42,24 @@ export const List = styled.ul`
   gap: 30px;
 `;
 
-export const NavList = styled.li`
+export const Title = styled.h1`
+  font-family: 'Montserrat', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+  color: #fffff0;
+`;
+
+export const MenuItem = styled.li`
+  position: relative;
+  list-style: none;
+`;
+
+export const MenuButton = styled.button`
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px 15px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -72,10 +89,48 @@ export const NavList = styled.li`
   }
 `;
 
-export const Title = styled.h1`
-  font-family: 'Montserrat', sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 800;
+export const Arrow = styled.span`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease-in-out;
+
+  transform: ${({ $isOpen }) => ($isOpen ? 'rotate(0deg)' : 'rotate(180deg)')};
+`;
+
+export const DropdownContainer = styled.div`
+  position: absolute;
+  width: 100%;
+  top: 100%;
+  left: 0;
+  background-color: #fffff0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  min-width: 200px;
+  z-index: 10;
+`;
+
+export const DropdownList = styled.ul`
+  padding: 0;
+  margin: 0;
+`;
+
+export const DropdownListItem = styled.li`
+  list-style: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
   font-style: normal;
-  color: #fffff0;
+  font-size: 14px;
+
+  &:hover {
+    background-color: #f1f1f1;
+  }
+
+  a {
+    text-decoration: none;
+    color: #252525;
+    display: block;
+  }
 `;

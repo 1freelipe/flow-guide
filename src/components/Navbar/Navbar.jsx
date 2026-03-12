@@ -1,4 +1,9 @@
+import React from 'react';
+
 import * as nav from './styled';
+
+import database from '../../utils/database';
+import DropDownItem from './DropDownItem';
 
 export default function Navbar() {
   return (
@@ -7,13 +12,16 @@ export default function Navbar() {
         <nav.Title>Flow</nav.Title>
         <nav.Title className="secondTitle">Guide</nav.Title>
       </nav.Logo>
+
       <nav.NavLinks>
         <nav.List>
-          <nav.NavList>Item 1</nav.NavList>
-          <nav.NavList>Item 2</nav.NavList>
-          <nav.NavList>Item 3</nav.NavList>
-          <nav.NavList>Item 4</nav.NavList>
-          <nav.NavList>Item 5</nav.NavList>
+          {Object.entries(database).map(([keyModule, dataModule]) => (
+            <DropDownItem
+              key={keyModule}
+              moduleTitle={dataModule.modulo}
+              categories={dataModule.categories}
+            />
+          ))}
         </nav.List>
       </nav.NavLinks>
     </nav.Containernav>
