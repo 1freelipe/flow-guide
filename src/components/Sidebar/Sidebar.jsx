@@ -11,7 +11,6 @@ export default function Sidebar() {
   const module = database[modulo];
   const categorieAct = module?.categories.find((cat) => cat.id === categoria);
   const operations = categorieAct?.operations || [];
-  // const suboperations = operations?.suboperations || [];
 
   return (
     <side.Containerside>
