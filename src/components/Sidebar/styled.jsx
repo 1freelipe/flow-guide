@@ -5,18 +5,16 @@ export const Containerside = styled.div`
   align-items: center;
   justify-content: flex-end;
   flex-direction: column;
-  width: 250px;
-  padding: 20px;
-  margin-left: 5px;
-  position: absolute;
-  bottom: 25%;
+  max-width: 100%;
+  margin: auto 0;
+  padding: 20px 0 20px 80px;
 `;
 
 export const Sidebar = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
-  width: 250px;
+  justify-content: flex-start;
+  width: 100%;
   height: 350px;
   border-right: 2px solid #c9c9c9;
 `;
@@ -27,6 +25,7 @@ export const NavList = styled.ul`
   justify-content: center;
   flex-direction: column;
   gap: 35px;
+  width: 100%;
 `;
 
 export const List = styled.li`

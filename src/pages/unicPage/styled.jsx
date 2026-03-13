@@ -1,14 +1,20 @@
 import styled from 'styled-components';
 
+export const Layout = styled.div`
+  display: grid;
+  grid-template-columns: 320px 1fr 350px;
+  min-height: 100vh;
+`;
+
 export const Container = styled.section`
   height: 100vh;
-  width: 1400px;
+  width: 100%;
+  max-width: 1400px;
   background: #111519;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin: 0 auto;
   border: 2px solid #1d2126;
   border-radius: 9px;
   gap: 30px;

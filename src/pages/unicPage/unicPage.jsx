@@ -23,36 +23,38 @@ export default function Unicpage() {
   return (
     <>
       <Navbar />
-      <Sidebar />
-      <home.Container>
-        <home.WrapperTitle>
-          <home.Title>
-            {subOperationsAct
-              ? `${operationsAct?.title} - ${subOperationsAct?.title}`
-              : operationsAct?.title}
-          </home.Title>
+      <home.Layout>
+        <Sidebar />
+        <home.Container>
+          <home.WrapperTitle>
+            <home.Title>
+              {subOperationsAct
+                ? `${operationsAct?.title} - ${subOperationsAct?.title}`
+                : operationsAct?.title}
+            </home.Title>
 
-          <home.SubTitle>
-            Abaixo, contém o passo a passo orientado de como emitir um{' '}
-            <span>{operationsAct?.title}</span>, e no final, terá um vídeo do
-            mesmo processo.{' '}
-          </home.SubTitle>
-        </home.WrapperTitle>
+            <home.SubTitle>
+              Abaixo, contém o passo a passo orientado de como emitir um{' '}
+              <span>{operationsAct?.title}</span>, e no final, terá um vídeo do
+              mesmo processo.{' '}
+            </home.SubTitle>
+          </home.WrapperTitle>
 
-        <home.MiniTitle>Passo a Passo</home.MiniTitle>
+          <home.MiniTitle>Passo a Passo</home.MiniTitle>
 
-        <home.WrapperContent>
-          {stepGuide?.length > 0 ? (
-            <home.StepList>
-              {stepGuide.map((stp) => (
-                <home.StepItem key={stp.id}>{stp.instruction}</home.StepItem>
-              ))}
-            </home.StepList>
-          ) : (
-            <p>Guia ainda em construção</p>
-          )}
-        </home.WrapperContent>
-      </home.Container>
+          <home.WrapperContent>
+            {stepGuide?.length > 0 ? (
+              <home.StepList>
+                {stepGuide.map((stp) => (
+                  <home.StepItem key={stp.id}>{stp.instruction}</home.StepItem>
+                ))}
+              </home.StepList>
+            ) : (
+              <p>Guia ainda em construção</p>
+            )}
+          </home.WrapperContent>
+        </home.Container>
+      </home.Layout>
     </>
   );
 }
