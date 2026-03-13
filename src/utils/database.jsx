@@ -1,6 +1,6 @@
 const database = {
   fiscal: {
-    modulo: 'Fiscal',
+    modulo: 'Fiscal - TMS',
     categories: [
       {
         id: 'emissão-cte',
@@ -144,7 +144,7 @@ const database = {
     categories: [{ id: 'nfe', title: 'Emissão de NF-e' }],
   },
   cancelamentos: {
-    modulo: 'Cancelamentos',
+    modulo: 'Cancelamentos - TMS',
     categories: [
       {
         id: 'cancel-cte',
@@ -239,7 +239,7 @@ const database = {
     ],
   },
   relatorios: {
-    modulo: 'Relatorios',
+    modulo: 'Relatorios - TMS',
     categories: [
       {
         id: 'consulcte',
