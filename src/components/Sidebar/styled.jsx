@@ -2,21 +2,28 @@ import styled from 'styled-components';
 
 export const Containerside = styled.div`
   display: flex;
-  align-items: center;
-  justify-content: flex-end;
+  justify-content: flex-start;
   flex-direction: column;
   max-width: 100%;
-  margin: auto 0;
+  /* margin: auto 0; */
   padding: 20px 0 20px 80px;
+  position: relative;
 `;
 
 export const Sidebar = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  width: 100%;
-  height: 350px;
+  width: 240px;
+  height: fit-content;
   border-right: 2px solid #c9c9c9;
+  position: sticky;
+  top: 45%;
+  z-index: 100;
+
+  @media (max-width: 1378px) {
+    top: 35%;
+  }
 `;
 
 export const NavList = styled.ul`
@@ -48,6 +55,10 @@ export const List = styled.li`
     width: 100%;
     padding: 5px;
     font-size: 15px;
+
+    @media (max-width: 1378px) {
+      font-size: 14px;
+    }
   }
 
   &::before {
@@ -117,6 +128,10 @@ export const MenuButton = styled.button`
 
   &:hover::after {
     width: 100%;
+  }
+
+  @media (max-width: 1378px) {
+    font-size: 14px;
   }
 `;
 

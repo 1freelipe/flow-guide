@@ -7,8 +7,8 @@ export const Layout = styled.div`
 `;
 
 export const Container = styled.section`
-  height: 100vh;
   width: 100%;
+  height: 100%;
   max-width: 1400px;
   background: #111519;
   display: flex;
@@ -19,6 +19,7 @@ export const Container = styled.section`
   border-radius: 9px;
   gap: 30px;
   position: relative;
+  padding: 10px;
 `;
 
 export const WrapperTitle = styled.div`
@@ -28,10 +29,12 @@ export const WrapperTitle = styled.div`
   flex-direction: column;
   width: 100%;
   margin: 0 auto;
-  height: 150px;
   gap: 5px;
-  position: absolute;
-  top: 0;
+  height: 150px;
+
+  @media (max-width: 1378px) {
+    gap: 15px;
+  }
 `;
 
 export const Title = styled.h1`
@@ -40,6 +43,11 @@ export const Title = styled.h1`
   font-style: normal;
   font-size: 40px;
   color: #fffff0;
+  text-align: center;
+
+  @media (max-width: 1378px) {
+    font-size: 30px;
+  }
 `;
 
 export const SubTitle = styled.h2`
@@ -53,11 +61,71 @@ export const SubTitle = styled.h2`
   span {
     text-decoration: underline;
   }
+
+  @media (max-width: 1378px) {
+    font-size: 16px;
+  }
+`;
+
+export const LightboxOverlay = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  cursor: zoom-out;
+`;
+
+export const LightboxImage = styled.img`
+  max-width: 90%; /* Nunca ultrapassa o tamanho da tela */
+  max-height: 90%;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  cursor: default; /* O clique na imagem não faz nada */
+`;
+
+export const CloseButton = styled.button`
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  background: none;
+  border: none;
+  color: #fffff0;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.2s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    color: #ff4d4d;
+  }
+`;
+
+export const ImageContainer = styled.div`
+  margin-top: 15px;
+  img {
+    max-width: 100%;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    transition: transform 0.2s;
+
+    &:hover {
+      transform: scale(1.02);
+    }
+  }
 `;
 
 export const WrapperContent = styled.div`
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: flex-start;
   flex-direction: column;
   gap: 20px;
@@ -69,7 +137,7 @@ export const MiniTitle = styled.h3`
   font-weight: 600;
   font-style: italic;
   color: #fffff0;
-  font-size: 20px;
+  font-size: 22px;
 `;
 
 export const StepList = styled.ul`
@@ -85,4 +153,20 @@ export const StepItem = styled.li`
   font-weight: 300;
   font-style: normal;
   color: #fffff0;
+`;
+
+export const WrapperImage = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 0 auto;
+  height: auto;
+`;
+
+export const DivImage = styled.img`
+  width: 100%;
+  /* max-height: 450px; */
+  margin-top: 35px;
+  margin-bottom: 35px;
 `;

@@ -23,6 +23,37 @@ const database = {
                     id: 2,
                     instruction:
                       'Pós conferência, se todas as informações forem iguais, seguiremos pela ODT (Ordem de transporte) -> A partir de uma tabela de preço.',
+                    image: '/images/ODT/InicialODT.jpeg',
+                  },
+                  {
+                    id: 2,
+                    instruction:
+                      'Pós conferência, se todas as informações forem iguais, seguiremos pela ODT (Ordem de transporte) -> A partir de uma tabela de preço.',
+                    image: '/images/ODT/InicialODT.jpeg',
+                  },
+                  {
+                    id: 2,
+                    instruction:
+                      'Pós conferência, se todas as informações forem iguais, seguiremos pela ODT (Ordem de transporte) -> A partir de uma tabela de preço.',
+                    image: '/images/ODT/InicialODT.jpeg',
+                  },
+                  {
+                    id: 2,
+                    instruction:
+                      'Pós conferência, se todas as informações forem iguais, seguiremos pela ODT (Ordem de transporte) -> A partir de uma tabela de preço.',
+                    image: '/images/ODT/InicialODT.jpeg',
+                  },
+                  {
+                    id: 2,
+                    instruction:
+                      'Pós conferência, se todas as informações forem iguais, seguiremos pela ODT (Ordem de transporte) -> A partir de uma tabela de preço.',
+                    image: '/images/ODT/InicialODT.jpeg',
+                  },
+                  {
+                    id: 2,
+                    instruction:
+                      'Pós conferência, se todas as informações forem iguais, seguiremos pela ODT (Ordem de transporte) -> A partir de uma tabela de preço.',
+                    image: '/images/ODT/InicialODT.jpeg',
                   },
                 ],
               },
