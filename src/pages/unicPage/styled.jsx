@@ -165,8 +165,55 @@ export const WrapperImage = styled.div`
 `;
 
 export const DivImage = styled.img`
-  width: 100%;
+  width: 1400px;
   /* max-height: 450px; */
   margin-top: 35px;
   margin-bottom: 35px;
+`;
+
+// Container que alinha os botões ao centro no final dos passos
+export const PaginationContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: 40px;
+  padding-top: 20px;
+  width: 450px;
+  border-top: 1px solid #c9c9c9;
+`;
+
+// O botão estilizado
+export const PaginationButton = styled.button`
+  background-color: transparent;
+  color: #fff;
+  border: 1px solid #555;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.2s;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  font-style: normal;
+
+  &:hover:not(:disabled) {
+    background-color: #333;
+    border-color: #fff;
+  }
+
+  &:disabled {
+    color: #555;
+    border-color: #333;
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+`;
+
+export const PaginationInfo = styled.span`
+  color: #c9c9c9;
+  font-size: 14px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  font-style: normal;
 `;

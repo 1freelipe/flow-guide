@@ -15,6 +15,7 @@ export const Sidebar = styled.div`
   align-items: center;
   justify-content: flex-start;
   width: 240px;
+  min-height: 350px;
   height: fit-content;
   border-right: 2px solid #c9c9c9;
   position: sticky;
@@ -22,7 +23,8 @@ export const Sidebar = styled.div`
   z-index: 100;
 
   @media (max-width: 1378px) {
-    top: 35%;
+    top: 40%;
+    min-height: 200px;
   }
 `;
 

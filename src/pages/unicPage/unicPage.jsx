@@ -1,5 +1,5 @@
 import { useParams } from 'react-router';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { IoCloseCircleSharp } from 'react-icons/io5';
 
 import * as home from './styled';
@@ -8,9 +8,11 @@ import Sidebar from '../../components/Sidebar/Sidebar';
 import database from '../../utils/database';
 
 export default function Unicpage() {
+  const [paginaAtual, setPaginaAtual] = useState(0);
   const { modulo, categoria, operacao, suboperacao } = useParams();
   const [lighboxOpen, setLightboxOpen] = useState(null);
 
+  const stepsForPages = 8;
   const module = database[modulo];
   const categorieAct = module?.categories?.find((cat) => cat.id === categoria);
   const operationsAct = categorieAct?.operations?.find(
@@ -21,6 +23,29 @@ export default function Unicpage() {
   );
 
   const stepGuide = subOperationsAct?.steps || operationsAct?.steps || [];
+
+  useEffect(() => {
+    // eslint-disable-next-line
+    setPaginaAtual(1);
+  }, [operacao, suboperacao]);
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [paginaAtual]);
+
+  const indexLastStep = paginaAtual * stepsForPages;
+  const indexFirstStep = indexLastStep - stepsForPages;
+
+  const handleNextPage = (novaPagina) => {
+    setPaginaAtual(novaPagina);
+  };
+
+  const handleLastPage = (novaPagina) => {
+    setPaginaAtual(novaPagina);
+  };
+
+  const stepAct = stepGuide.slice(indexFirstStep, indexLastStep);
+  const totalPages = Math.ceil(stepGuide.length / stepsForPages);
 
   return (
     <>
@@ -47,9 +72,11 @@ export default function Unicpage() {
           <home.WrapperContent>
             {stepGuide?.length > 0 ? (
               <home.StepList>
-                {stepGuide.map((stp) => (
+                {stepAct.map((stp) => (
                   <home.StepItem key={stp.id}>
-                    {stp.instruction}
+                    <span
+                      dangerouslySetInnerHTML={{ __html: stp.instruction }}
+                    />
                     {stp.image && (
                       <home.ImageContainer>
                         <home.WrapperImage
@@ -70,6 +97,28 @@ export default function Unicpage() {
               <p>Guia ainda em construção</p>
             )}
           </home.WrapperContent>
+
+          {totalPages > 1 && (
+            <home.PaginationContainer>
+              <home.PaginationButton
+                onClick={() => handleLastPage(paginaAtual - 1)}
+                disabled={paginaAtual === 1}
+              >
+                Anterior
+              </home.PaginationButton>
+
+              <home.PaginationInfo>
+                Página {paginaAtual} de {totalPages}
+              </home.PaginationInfo>
+
+              <home.PaginationButton
+                onClick={() => handleNextPage(paginaAtual + 1)}
+                disabled={paginaAtual === totalPages}
+              >
+                Próximo
+              </home.PaginationButton>
+            </home.PaginationContainer>
+          )}
         </home.Container>
 
         {lighboxOpen && (

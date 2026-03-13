@@ -17,7 +17,7 @@ const database = {
                   {
                     id: 1,
                     instruction:
-                      'Antes de mais nada, primeiro devemos consultar todas as notas e verificar se todas possuem o mesmo Remetente, Destinatário e CFOP.',
+                      'Antes de mais nada, primeiro devemos consultar todas as notas e verificar se todas possuem o mesmo <em>Remetente</em>, <em>Destinatário</em> e <em>CFOP</em>.',
                   },
                   {
                     id: 2,
@@ -26,34 +26,45 @@ const database = {
                     image: '/images/ODT/InicialODT.jpeg',
                   },
                   {
-                    id: 2,
+                    id: 3,
                     instruction:
-                      'Pós conferência, se todas as informações forem iguais, seguiremos pela ODT (Ordem de transporte) -> A partir de uma tabela de preço.',
-                    image: '/images/ODT/InicialODT.jpeg',
+                      'Começaremos preenchendo de cima para baixo, começando lá do cabeçalho e terminando no rodapé da tela.',
                   },
                   {
-                    id: 2,
+                    id: 4,
                     instruction:
-                      'Pós conferência, se todas as informações forem iguais, seguiremos pela ODT (Ordem de transporte) -> A partir de uma tabela de preço.',
-                    image: '/images/ODT/InicialODT.jpeg',
+                      '1. Filial - Levamos em consideração o Estado em que o veículo está saindo. Temos Filial em Mato Grosso do Sul/MS e Limeira/SP. Se a carga estiver saindo de MS a filial é: Três Lagoas, caso contrário, a filial é: Limeira ',
                   },
                   {
-                    id: 2,
-                    instruction:
-                      'Pós conferência, se todas as informações forem iguais, seguiremos pela ODT (Ordem de transporte) -> A partir de uma tabela de preço.',
-                    image: '/images/ODT/InicialODT.jpeg',
+                    id: 5,
+                    instruction: `2. Tipo de Frete, levamos em consideração o pagador do frete, se ele diz respeito ao Remetente, então o Tipo de Frete é: PAGO. Se for o destinatário, o Tipo de Frete será: A PAGAR. `,
                   },
                   {
-                    id: 2,
-                    instruction:
-                      'Pós conferência, se todas as informações forem iguais, seguiremos pela ODT (Ordem de transporte) -> A partir de uma tabela de preço.',
-                    image: '/images/ODT/InicialODT.jpeg',
+                    id: 6,
+                    instruction: '3. Espécie Carga: Produto Acabado ',
                   },
                   {
-                    id: 2,
+                    id: 7,
                     instruction:
-                      'Pós conferência, se todas as informações forem iguais, seguiremos pela ODT (Ordem de transporte) -> A partir de uma tabela de preço.',
-                    image: '/images/ODT/InicialODT.jpeg',
+                      '4. Combinação Veicular está diretamente ligado à tabela de frete, para metalfrio, seja ela Remetente ou Destinatário, será sempre: CONJUNTO CONVENCIONAL 5 EIXOS. Aos demais, será informado no momento da solicitação. ',
+                  },
+                  {
+                    id: 8,
+                    instruction:
+                      '5. Por último, a Natureza da Carga - Utilizaremos como padrão sempre: Produto Acabado, esporádicamente: Produto Acabado - Devolução.',
+                    image: '/images/ODT/cabecalho.jpeg',
+                  },
+                  {
+                    id: 9,
+                    instruction:
+                      'Abaixo, iremos preencher o Remetente e o Destinatário que estão na nota, escolher o Tipo Serv. CTe: Normal e, logo abaixo, salvar a ODT, nesse momento, irá registrar um Número de ODT lá no topo de cabeçalho.',
+                    image: '/images/ODT/corpo.jpeg',
+                  },
+                  {
+                    id: 10,
+                    instruction:
+                      'Iremos conferir os valores de frete na tabela ao lado, ele deve preencher o FRETE PESO, conforme o valor informado antes da solicitação do CT-e.',
+                    image: '/images/ODT/tabela.jpeg',
                   },
                 ],
               },
