@@ -66,6 +66,31 @@ const database = {
                       'Iremos conferir os valores de frete na tabela ao lado, ele deve preencher o FRETE PESO, conforme o valor informado antes da solicitação do CT-e.',
                     image: '/images/ODT/tabela.jpeg',
                   },
+                  {
+                    id: 11,
+                    instruction:
+                      'Valores conferidos, então passaremos ao setor de notas fiscais, é onde nós vamos incluir todas as notas que nós possuímos na mão, mencionando cada campo da nota em seu devido lugar na Ordem de Transportes.',
+                  },
+                  {
+                    id: 12,
+                    instruction:
+                      '1. A chave de acesso da nota fiscal, toda a numeração compõe 44 números no total. Sendo eles: O ano, o CNPJ da empresa emitente da NF, o número da nota, a série da nota e, os números finais que são compostos por um algoritmo gerador de números aleatórios, baseado nas primeiras numerações da NF.',
+                  },
+                  {
+                    id: 13,
+                    instruction: '2. A data de emissão da nota fiscal.',
+                  },
+                  {
+                    id: 14,
+                    instruction:
+                      '3. O Produto transportado na nota, podemos utilizar sempre o código CFNF, conforme a nota fiscal.',
+                  },
+                  {
+                    id: 15,
+                    instruction:
+                      '4. Por último: Quantidade, volume e valor. Quantidade mencionada na nota fiscal, volume (sempre o PESO BRUTO mencionado na nota fiscal) e   valor (sempre utilizamos o VALOR TOTAL DA NOTA FISCAL).',
+                    image: '',
+                  },
                 ],
               },
               { id: 'opt-rateio', title: 'OPT Rateio' },
@@ -77,7 +102,14 @@ const database = {
             steps: [{ id: 1, instruction: 'qwopdkqpow' }],
           },
           { id: 'cte-subcontratação', title: 'CT-e de Subcontratação' },
-          { id: 'cte-devolução', title: 'CT-e de Devolução' },
+          {
+            id: 'cte-devolução',
+            title: 'CT-e de Devolução',
+            suboperations: [
+              { id: 'dev-fracionado', title: 'OPT Fracionado Geral' },
+              { id: 'dev-rateio', title: 'OPT Rateio' },
+            ],
+          },
           { id: 'cte-complementar', title: 'CT-e Complementar' },
         ],
       },
@@ -114,31 +146,135 @@ const database = {
   cancelamentos: {
     modulo: 'Cancelamentos',
     categories: [
-      { id: 'cancel-cte', title: 'Cancelamento de CT-e' },
-      { id: 'cancel-mdf', title: 'Cancelamento de MDF-e' },
-      { id: 'cancel-ciot', title: 'Cancelamento de CIOT' },
-      { id: 'cancel-pgto', title: 'Cancelamento de Pagamento' },
+      {
+        id: 'cancel-cte',
+        title: 'Cancelamento de CT-e',
+        operations: [
+          {
+            id: 'cte-cancel-naoaut',
+            title: 'Cancelamento de CT-e não autorizado',
+          },
+          { id: 'cte-cancel-aut', title: 'Cancelamento de CT-e autorizado' },
+        ],
+      },
+      {
+        id: 'cancel-mdf',
+        title: 'Cancelamento de MDF-e',
+        operations: [
+          {
+            id: 'mdf-cancel-naoaut',
+            title: 'Cancelamento de MDF-e não autorizado',
+          },
+          { id: 'mdf-cancel-aut', title: 'Cancelamento de MDF-e autorizado' },
+        ],
+      },
+      {
+        id: 'cancel-ciot',
+        title: 'Cancelamento de CIOT',
+        operations: [{ id: 'ciot-cancel', title: 'Cancelamento de CIOT' }],
+      },
+      {
+        id: 'cancel-pgto',
+        title: 'Cancelamento de Pagamento',
+        operations: [
+          { id: 'pgto-cancel', title: 'Cancelamento de PGTO emitido' },
+        ],
+      },
     ],
   },
   cadastros: {
     modulo: 'Cadastros',
     categories: [
-      { id: 'cadmot', title: 'Cadastro de Motoristas' },
-      { id: 'cadvec', title: 'Cadastro de Veículos' },
-      { id: 'cadopf', title: 'Cadastro de OPF' },
-      { id: 'cadforn', title: 'Cadastro de Fornecedores/Clientes' },
-      { id: 'engdeg', title: 'Engate/Desengate' },
-      { id: 'transf', title: 'Transferência Agregado' },
+      {
+        id: 'cadmot',
+        title: 'Cadastro de Motoristas',
+        operations: [
+          {
+            id: 'cadastro-mot',
+            title: 'Cadastro de Motoristas',
+          },
+        ],
+      },
+      {
+        id: 'cadvec',
+        title: 'Cadastro de Veículos',
+        operations: [
+          { id: 'cadastro-veic', title: 'Cadastro de Veículos Frota' },
+          { id: 'cadastro-veic-terc', title: 'Cadastro de Veículos Terceiros' },
+        ],
+      },
+      {
+        id: 'cadopf',
+        title: 'Cadastro de OPF',
+        operations: [
+          {
+            id: 'cadastro-opf',
+            title: 'Cadastro de Operação Fornecedor (OPF)',
+          },
+        ],
+      },
+      {
+        id: 'cadforn',
+        title: 'Cadastro de Fornecedores/Clientes',
+        operations: [
+          { id: 'cadastro-forn', title: 'Cadastro de Fornecedores' },
+          { id: 'cadastro-clientes', title: 'Cadastro de Clientes' },
+        ],
+      },
+      {
+        id: 'engdeg',
+        title: 'Engate/Desengate',
+        operations: [{ id: 'engate-desengate', title: 'Engates e Desengates' }],
+      },
+      {
+        id: 'transf',
+        title: 'Transferência Agregado',
+        operations: [
+          {
+            id: 'transferencia',
+            title: 'Transferência de Terceiros/Agregados',
+          },
+        ],
+      },
     ],
   },
   relatorios: {
-    modulo: 'Relatórios',
+    modulo: 'Relatorios',
     categories: [
-      { id: 'consulcte', title: 'Consulta de CT-e' },
-      { id: 'consulmdf', title: 'Consulta de MDF-e' },
-      { id: 'consultciot', title: 'Consulta de CIOT' },
-      { id: 'ferramentas', title: 'Ferramentas' },
-      { id: 'fatura', title: 'Faturas' },
+      {
+        id: 'consulcte',
+        title: 'Consulta de CT-e',
+        operations: [
+          { id: 'consulta-cte', title: 'Consulta de CT-e total' },
+          { id: 'consulta-cte-p', title: 'Consulta de CT-e com parâmetros' },
+        ],
+      },
+      {
+        id: 'consulmdf',
+        title: 'Consulta de MDF-e',
+        operations: [
+          { id: 'consulta-mdf', title: 'Consulta de MDF-e total' },
+          { id: 'consulta-mdf-p', title: 'Consulta de MDF-e com parâmetro' },
+        ],
+      },
+      {
+        id: 'consultciot',
+        title: 'Consulta de CIOT',
+        operations: [{ id: 'consulta-ciot', title: 'Consulta de CIOT' }],
+      },
+      {
+        id: 'ferramentas',
+        title: 'Ferramentas',
+        operations: [
+          { id: 'consul-nfe', title: 'Consulta e Validação de NF-e' },
+          { id: 'consul-cte', title: 'Consulta de CT-e no sefaz' },
+        ],
+      },
+      {
+        id: 'fatura',
+        title: 'Faturas',
+        operations: [{ id: 'faturas', title: 'Consulta de Faturas total' }],
+      },
     ],
   },
   erros: {
