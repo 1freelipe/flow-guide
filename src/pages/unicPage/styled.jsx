@@ -166,7 +166,6 @@ export const WrapperImage = styled.div`
 
 export const DivImage = styled.img`
   width: 1400px;
-  /* max-height: 450px; */
   margin-top: 35px;
   margin-bottom: 35px;
 `;
@@ -179,7 +178,7 @@ export const PaginationContainer = styled.div`
   gap: 20px;
   margin-top: 40px;
   padding-top: 20px;
-  width: 450px;
+  width: 650px;
   border-top: 1px solid #c9c9c9;
 `;
 
@@ -196,6 +195,13 @@ export const PaginationButton = styled.button`
   font-family: 'Poppins', sans-serif;
   font-weight: 300;
   font-style: normal;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .arrow {
+    font-size: 17px;
+  }
 
   &:hover:not(:disabled) {
     background-color: #333;

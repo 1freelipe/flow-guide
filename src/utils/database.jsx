@@ -1,6 +1,6 @@
 const database = {
   fiscal: {
-    modulo: 'Fiscal - TMS',
+    modulo: 'Fiscal',
     categories: [
       {
         id: 'emissão-cte',
@@ -83,13 +83,94 @@ const database = {
                   {
                     id: 14,
                     instruction:
-                      '3. O Produto transportado na nota, podemos utilizar sempre o código CFNF, conforme a nota fiscal.',
+                      '3. O Produto transportado (Descrição do Produto) na nota, podemos utilizar sempre o código CFNF, conforme a nota fiscal.',
                   },
                   {
                     id: 15,
                     instruction:
                       '4. Por último: Quantidade, volume e valor. Quantidade mencionada na nota fiscal, volume (sempre o PESO BRUTO mencionado na nota fiscal) e   valor (sempre utilizamos o VALOR TOTAL DA NOTA FISCAL).',
-                    image: '',
+                    image: '/images/ODT/nf1.jpeg',
+                  },
+                  {
+                    id: 16,
+                    instruction:
+                      'Abaixo, um print da mesma tela, porém, a continuação da inserção das informações da nota fiscal.',
+                    image: '/images/ODT/nf2.jpeg',
+                  },
+                  {
+                    id: 17,
+                    instruction:
+                      'Após inserir todas as notas, o passo final para a criação da Ordem de transporte é ir em Adicionais de Frete, a segunda aba no topo da tela, acima do cabeçalho.',
+                  },
+                  {
+                    id: 18,
+                    instruction:
+                      'Aqui, nós devemos preencher uma etapa de transporte, para primeiros casos, sempre usaremos Coleta / Entrega. Basta clicar no botão de incluir, selecionar o tipo de Etapa de Transporte e clicar em salvar.',
+                    image: '/images/ODT/etapas.jpeg',
+                  },
+                  {
+                    id: 19,
+                    instruction:
+                      'Feito isso, a ordem estará criada e preparada para ser inserida na OPT(Operação de Transporte) de Fracionado Geral.',
+                  },
+                  {
+                    id: 20,
+                    instruction:
+                      'Partindo para a Ordem de Transporte seguindo a imagem abaixo, estaremos no processo final de criação de um Conhecimento de Transporte.',
+                    image: '/images/ODT/opt.jpeg',
+                  },
+                  {
+                    id: 21,
+                    instruction:
+                      'Aqui, nós preencheremos os dados do motorista que irá conduzir o caminhão, do conjunto Cavalo/Carreta que irá transportar, do conferente que está fazendo a documentação e por último, a rota que ele irá fazer.',
+                  },
+                  {
+                    id: 22,
+                    instruction:
+                      '1. A Filial deve ser a mesma filial que foi mencionada no cabeçalho da OPT.',
+                  },
+                  {
+                    id: 23,
+                    instruction:
+                      '2. Tipo Frete - Aqui devemos saber qual modalidade será feita o transporte, a carga será transportada por um motorista de frota própria, ou um motorista terceiro/agregado da empresa. Muito importante marcar a opção correta, ela serve para filtrar os caminhões que serão mostrados no momento em que tentar selecionar um conjunto.',
+                  },
+                  {
+                    id: 24,
+                    instruction:
+                      '3. O Conferente a ser mencionado na OPT, é a própria pessoa que está conduzindo a emissão.',
+                  },
+                  {
+                    id: 25,
+                    instruction:
+                      '4. Veic. Tração - É o conjunto que será utilizado para transportar a carga.',
+                  },
+                  {
+                    id: 26,
+                    instruction:
+                      '5. No. Rota - É o Número da rota que o motorista fará o transporte, caso não saiba o número da rota, é possível filtrar pela cidade de origem e cidade de destino mencionado na nota fiscal.',
+                    image: '/images/ODT/cabecalhoopt.jpeg',
+                  },
+                  {
+                    id: 27,
+                    instruction:
+                      'Ainda na mesma tela, porém, um pouco mais abaixo, deveremos incluir aquela ordem de transporte que fizemos anteriormente.',
+                    image: '/images/ODT/inserirodt.jpeg',
+                  },
+                  {
+                    id: 28,
+                    instruction:
+                      'Com a ordem inserida, o passo final é criar o CT-e (Conhecimento de Transporte Eletrônico) na sub-aba CTe / NFSe',
+                  },
+                  {
+                    id: 29,
+                    instruction:
+                      'Nessa tela, possuem poucos cliques, mas deve ser feito na ordem correta. Primeiro iremos clicar em MARCAR TODOS e EMITIR CTRC. Nesse momento, se não houver nenhum erro, o CT-e já irá ser criado, porém, ainda não autorizado.',
+                  },
+                  {
+                    id: 30,
+                    instruction:
+                      'Para autorizarmos, iremos clicar em MARCAR TODOS novamente, e <strong>EMITIR CTE</strong>. Repare que na coluna: Sit. Atual SEFAZ, deverá conter a informação: <strong>Autorizado</strong>. Se sim, está tudo certo e o processo finaliza por aqui.',
+                    images: '/images/ODT/cte.jpeg',
                   },
                 ],
               },
@@ -144,7 +225,7 @@ const database = {
     categories: [{ id: 'nfe', title: 'Emissão de NF-e' }],
   },
   cancelamentos: {
-    modulo: 'Cancelamentos - TMS',
+    modulo: 'Cancelamentos',
     categories: [
       {
         id: 'cancel-cte',
@@ -239,7 +320,7 @@ const database = {
     ],
   },
   relatorios: {
-    modulo: 'Relatorios - TMS',
+    modulo: 'Relatorios',
     categories: [
       {
         id: 'consulcte',

@@ -6,6 +6,8 @@ import * as home from './styled';
 import Navbar from '../../components/Navbar/Navbar';
 import Sidebar from '../../components/Sidebar/Sidebar';
 import database from '../../utils/database';
+import { MdKeyboardDoubleArrowRight } from 'react-icons/md';
+import { MdKeyboardDoubleArrowLeft } from 'react-icons/md';
 
 export default function Unicpage() {
   const [paginaAtual, setPaginaAtual] = useState(0);
@@ -42,6 +44,14 @@ export default function Unicpage() {
 
   const handleLastPage = (novaPagina) => {
     setPaginaAtual(novaPagina);
+  };
+
+  const handleInitialPage = () => {
+    setPaginaAtual(1);
+  };
+
+  const handleFinalPage = () => {
+    setPaginaAtual(totalPages);
   };
 
   const stepAct = stepGuide.slice(indexFirstStep, indexLastStep);
@@ -101,6 +111,12 @@ export default function Unicpage() {
           {totalPages > 1 && (
             <home.PaginationContainer>
               <home.PaginationButton
+                onClick={handleInitialPage}
+                disabled={paginaAtual === 1}
+              >
+                <MdKeyboardDoubleArrowLeft className="arrow" />
+              </home.PaginationButton>
+              <home.PaginationButton
                 onClick={() => handleLastPage(paginaAtual - 1)}
                 disabled={paginaAtual === 1}
               >
@@ -116,6 +132,12 @@ export default function Unicpage() {
                 disabled={paginaAtual === totalPages}
               >
                 Próximo
+              </home.PaginationButton>
+              <home.PaginationButton onClick={handleFinalPage}>
+                <MdKeyboardDoubleArrowRight
+                  className="arrow"
+                  disabled={paginaAtual === totalPages}
+                />
               </home.PaginationButton>
             </home.PaginationContainer>
           )}
