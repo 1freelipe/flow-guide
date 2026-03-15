@@ -174,7 +174,146 @@ const database = {
                   },
                 ],
               },
-              { id: 'opt-rateio', title: 'OPT Rateio' },
+              {
+                id: 'opt-rateio',
+                title: 'OPT Rateio',
+                steps: [
+                  {
+                    id: 1,
+                    instruction:
+                      'Após a conferência das notas, se em alguma delas houver divergência entre: Remetente, Destinatário ou CFOP, é por aqui que faremos o CT-e, e o frete passará a ser um frete fracionado com os valores rateados.',
+                    image: '/images/OPTRateio/optrateio.jpeg',
+                  },
+                  {
+                    id: 2,
+                    instruction:
+                      'Antes de começarmos, é ideal que as notas sejam separadas por CFOP, por remetente, ou por destinatário. Dessa forma, torna-se a conferência muito mais eficaz, caso seja preciso conferir.',
+                  },
+                  {
+                    id: 3,
+                    instruction:
+                      '1. Assim que entrarmos na tela, devemos preencher o cabeçalho com as informações que serão eficientes para o transporte.',
+                  },
+                  {
+                    id: 4,
+                    instruction:
+                      '2. Começamos preenchendo a filial levando em consideração a origem do transporte de acordo com a nota fiscal. Possuímos 2 filiais, sendo elas: Três Lagoas em Mato Grosso do Sul e Limeira em São Paulo. Caso a origem do frete não seja em nenhum desses Estados, o frete é feito pela filial de Limeira, exceto quando a operação for Amcor.',
+                  },
+                  {
+                    id: 5,
+                    instruction:
+                      '3. Tipo de Frete: Aqui levaremos em consideração a modalidade do transporte, se o transporte será feito por um frota ou por um terceiro. É importante marcar a opção correta, pois aqui irá filtrar os conjuntos de acordo com a opção desejada.',
+                  },
+                  {
+                    id: 6,
+                    instruction:
+                      '4. Motorista e Conferente: Aqui devemos marcar o motorista que fará o transporte, bem como o conferênte emissor da documentação.',
+                  },
+                  {
+                    id: 7,
+                    instruction:
+                      '5. Cliente Nome: Esse é um dos blocos mais importantes antes de começarmos a emissão, ele é quem irá definir a tabela de preços e qual o cliente que será o pagador do frete. Sendo assim, é de fato necessário muita atenção ao preencher.',
+                  },
+                  {
+                    id: 8,
+                    instruction:
+                      '6. Veic. Tração: Essa é a parte em que devemos mencionar o caminhão que irá fazer o frete e, nesse bloco é aplicado o filtro do TIPO FRETE. Caso seja frota e o veículo não apareça, o TIPO FRETE está incorreto.',
+                  },
+                  {
+                    id: 9,
+                    instruction:
+                      '7. Por último, mas não menos importante, devemos marcar o Tipo Serv. CTe. Nesse caso, podemos levar em consideração sempre o tipo normal, exceto em casos esporádicos.',
+                    image: '/images/OPTRateio/cabecalho.jpeg',
+                  },
+                  {
+                    id: 10,
+                    instruction:
+                      'Após preencher todas as informações, poderemos clicar em salvar localizado no rodapé da tela e seguiremos ao próximo passo.',
+                  },
+                  {
+                    id: 11,
+                    instruction:
+                      'Aqui devemos preencher praticamente todas as colunas que possuem na tela como se estivessemos preenchendo uma planilha no excel. E isso se tornará repetitivo para todas as notas que possuímos na mão.',
+                  },
+                  {
+                    id: 12,
+                    instruction:
+                      '1. Começamos sempre pela chave de acesso da nota fiscal, ela quem preencherá automaticamente o No NFe e a Série. ',
+                  },
+                  {
+                    id: 13,
+                    instruction:
+                      '2. Logo após, Data Emissão, CFOP NFe (E aqui devemos tomar muito cuidado ao informar o CFOP, pois ele quem indicará o tipo de produto que está sendo transportado). Seguindo pelo PESO BRUTO informado na nota, QTDE informado na nota e o Valor total da nota fiscal.',
+                  },
+                  {
+                    id: 14,
+                    instruction:
+                      '3. Código do produto podemos utilizar sempre um padrão de nossa escolha ele irá preencher automaticamente a Descrição do Produto. Pularemos para Espécie da Carga e nesse campo, podemos considerar sempre PRODUTO ACABADO.',
+                    image: '/images/OPTRateio/nf1.jpeg',
+                  },
+                  {
+                    id: 15,
+                    instruction:
+                      '4. Aqui podemos escolher de qual forma vamos preencher o Remetente mencionado na rota. Sugiro que seja sempre pelo CNPJ, pois dessa forma não haverá margem para erros.',
+                  },
+                  {
+                    id: 16,
+                    instruction:
+                      '5. O mesmo passo acima, serve para preencher o destinatário. Também sugiro que seja utilizado o campo por CNPJ.',
+                    image: '/images/OPTRateio/nf2.jpeg',
+                  },
+                  {
+                    id: 17,
+                    instruction:
+                      '6. Também iremos preencher o Local de Coleta e Local de Entrega de acordo com a nota fiscal. Em uma nota fiscal, podem existir até 4 campos que irão informar a real origem e o real destino de um transporte, eles são: Remetente, Destinatário, Local de Coleta e Local de Entrega. E quando existir os campos de Local de Coleta/Entrega, serão os locais que iremos considerar. Quando não houver essas informações, tanto para o local de Coleta, quanto para o local de Entrega, será considerado o próprio Remetente e Destinatáro.',
+                    image: '/images/OPTRateio/nf3.jpeg',
+                  },
+                  {
+                    id: 18,
+                    instruction:
+                      '7. Na última inserção, são as informações do pagador do frete, nesse caso, devemos considerar o Cliente Nome mencionado lá no cabeçalho.',
+                  },
+                  {
+                    id: 19,
+                    instruction:
+                      '8. CFOP - Cuidado ao confundir esse campo com o campo preenchido lá no começo, aquele CFOP é o Código Fiscal de Operação do produto transportado, já esse é o Código Fiscal de Operação de Transporte. Esse nós devemos sempre considerar o código 6352 (Prestação de Serviço de Transporte). Ele irá preencher automaticamente a Natureza da Operação que diz respeito a esse código',
+                  },
+                  {
+                    id: 20,
+                    instruction:
+                      '9. Por último, o Regime Tributário, podemos sempre considerar o 00 - Tributação normal por ICMS. E repetiremos esse mesmo processo para todas as notas que irão contemplar esse mesmo transporte.',
+                    image: '/images/OPTRateio/nf4.jpeg',
+                  },
+                  {
+                    id: 21,
+                    instruction:
+                      'Abaixo, um demonstrativo de como pode ficar uma OPT de Rateio com todas as notas inclusas.',
+                    image: '/images/OPTRateio/demonstrativo.jpeg',
+                  },
+                  {
+                    id: 22,
+                    instruction:
+                      'Após a inserção e conferência de todas as notas fiscais, virá a parte em que criaremos o CT-e para todas as notas de uma vez. ',
+                  },
+                  {
+                    id: 23,
+                    instruction:
+                      'Entraremos na sub-aba Qtde CTes Ativos, nela devemos clicar em MARCAR TODOS e logo após EMITIR CTRC. Repare que nesse momento, se olharmos para a coluna No CTe, veremos todas as numerações de todos os documentos gerados automaticamente, porém, não autorizados.',
+                  },
+                  {
+                    id: 24,
+                    instruction:
+                      'Para autorizar todos os documentos, faremos o mesmo processo de MARCAR TODOS e clicar no botão EMITIR CTE. Nesse momento, na coluna demarcada em Azul, devemos conferir se todos os CT-es receberam a situação: Autorizado.',
+                    image: '/images/OPTRateio/cte.jpeg',
+                  },
+                  {
+                    id: 25,
+                    instruction:
+                      'Caso algum não possua a situação <strong>Autorizado</strong>, ao mover as colunas para o lado, podemos conferir em Descrição Status CT-e qual foi o CT-e não autorizado e o motivo dele não ter sido autorizado.',
+                    image: '/images/OPTRateio/descricao.jpeg',
+                  },
+                ],
+              },
             ],
           },
           {
@@ -298,14 +437,153 @@ const database = {
         id: 'cadforn',
         title: 'Cadastro de Fornecedores/Clientes',
         operations: [
-          { id: 'cadastro-forn', title: 'Cadastro de Fornecedores' },
+          {
+            id: 'cadastro-forn',
+            title: 'Cadastro de Fornecedores',
+            steps: [
+              {
+                id: 1,
+                instruction:
+                  'Para cadastrar um fornecedor que não possui cadastro ativo no sistema, devemos localizar as informações pertinentes a ele e acessar o módulo comercial, local onde possui o caminho para cadastros.',
+                image: '/images/CadastroForn/caminho.jpeg',
+              },
+              {
+                id: 2,
+                instruction:
+                  'O Cadastro é divido em dois caminhos, e você deve saber qual caminho seguir, antes de acessar os cadastros. Para o cadastro ser considerado de Fornecedor, ele deve fornecer algum serviço para a transportadora, nesse caso, fornecer algum terceiro/agregado.',
+              },
+              {
+                id: 3,
+                instruction:
+                  'Esse mesmo fornecedor, pode ser pessoa física ou pessoa jurídica, basta selecionar ao lado a opção desejada e seguir com o cadastro.',
+                image: '/images/CadastroForn/incluir.jpeg',
+              },
+              {
+                id: 4,
+                instruction:
+                  'Se o Fornecedor for pessoa jurídica, o cadastro fica bem mais simplificado, pois o sistema utiliza de uma API que conversa com o aplicativo da receita federal que nos permite pesquisar o CNPJ digitado <strong>SE</strong> ele existir.',
+                image: '/images/CadastroForn/cnpj.jpeg',
+              },
+              {
+                id: 5,
+                instruction:
+                  'Assim que o campo do CNPJ for preenchido de acordo com o CNPJ do Fornecedor, o botão de busca ficará habilitado e irá buscar exatamente o CNPJ mencionado no campo.',
+                image: '/images/CadastroForn/buscacnpj.jpeg',
+              },
+              {
+                id: 6,
+                instruction:
+                  'Se o CNPJ digitado for encontrado, basta clicar em aplicar, que todas as informações de cadastro serão preenchidas automaticamente. Exceto a Inscrição Estadual, um dos campos mais cruciais que evitará um futuro erro na hora de emitir o CT-e.',
+                image: '/images/CadastroForn/buscacnpj2.jpeg',
+              },
+              {
+                id: 7,
+                instruction:
+                  'Alguns campos além da Inscrição Estadual, terão que ser preenchidos manualmente que são devidamente muito importantes para a finalização do cadastro. Sendo eles: A classificação, que nesse caso é Fornecedor, o checkbox Contribuinte ICMS só deverá ser marcado aos cadastros que possuírem uma Inscrição Estadual e a Situação Atual que, para todos os clientes/fornecedores, poderemos informar <strong>CORRENTE</strong>.',
+                image: '/images/CadastroForn/info.jpeg',
+              },
+              {
+                id: 8,
+                instruction:
+                  'Se o fornecedor for pessoa física, o cadastro passa a ser mais manual, porém, nada mais complicado, apenas com informações a serem preenchidas manualmente. E aí entra não só o CPF, como também, as informações de localização do fornecedor.',
+                image: '/images/CadastroForn/cpf.jpeg',
+              },
+              {
+                id: 9,
+                instruction:
+                  'Por fim, iremos clicar em salvar no rodapé da tela, para as informações concretizarem e partiremos a um último passo que só é cabível ao cadastro de Fornecedores.',
+                image: '/images/CadastroForn/salvar.jpeg',
+              },
+              {
+                id: 10,
+                instruction:
+                  'Após o salvamento, devemos passar para a aba DADOS P/EMISSÃO CIOT, lá iremos preencher o número da ANTT do fornecedor, e consultar essa numeração. O sistema fará uma comunicação com o site da CONSULTA PÚBLICA da ANTT e retornará os dados automaticamente. Note que o campo: CIOT Obr, é o campo que determinará se na hora de fazer um contrato ao motorista que faz parte desse fornecedor, irá gerar uma numeração de CIOT. Esse campo é extremamente crucial, e levaremos em consideração a quantidade de caminhões que o fornecedor em questão possui. O CIOT passa a ser obrigatório ao fornecedor que possui mais de 2 caminhões cadastrados em sua própria ANTT.',
+                image: '/images/CadastroForn/antt.jpeg',
+              },
+            ],
+          },
           { id: 'cadastro-clientes', title: 'Cadastro de Clientes' },
         ],
       },
       {
         id: 'engdeg',
         title: 'Engate/Desengate',
-        operations: [{ id: 'engate-desengate', title: 'Engates e Desengates' }],
+        operations: [
+          {
+            id: 'engate',
+            title: 'Engate',
+            steps: [
+              {
+                id: 1,
+                instruction:
+                  'Todos as carretas deverão ser acopladas com os seus devidos cavalos, e quando se faz necessário o engate/desengate de algum conjunto, é essa parte que devemos acessar.',
+                image: '/images/Engate/veiculos.jpeg',
+              },
+              {
+                id: 2,
+                instruction:
+                  'Após acessado, iremos clicar em Incluir no rodapé da tela, para que seja aberto uma linha e que ela possa ser preenchida com as informações que temos.',
+              },
+              {
+                id: 3,
+                instruction:
+                  'A linha ficará disponível para preenchimento e devemos ir preenchendo item por item para concluirmos o engate.',
+                image: '/images/engate/engate.jpeg',
+              },
+              {
+                id: 4,
+                instruction:
+                  'Esse passo é passível de poucos cliques, pois uma coluna contempla a outra. Devemos começar buscando o cavalo que terá uma carreta acoplada.',
+                image: '/images/Engate/buscaengate.jpeg',
+              },
+              {
+                id: 5,
+                instruction:
+                  'O Hodometro nada mais é que a kilometragem atual do caminhão, e nesse passo, se torna completamente necessário essa informação para que possamos concluir o engate. É solicitado diretamente ao motorista.',
+              },
+              {
+                id: 6,
+                instruction:
+                  'Logo após a informação acima, podemos buscar a carreta que será acoplada a esse cavalo.',
+                image: '/images/Engate/buscacarreta.jpeg',
+              },
+              {
+                id: 7,
+                instruction:
+                  'A carreta não possui a informação de Hodometro, esse campo é destinado ao cavalo em que ela está sendo acoplada, podemos zerar esse campo quando solicitado.',
+              },
+              {
+                id: 8,
+                instruction:
+                  'Por fim, basta apenas salvar no rodapé da tela e o cavalo estará acoplado na carreta selecionada.',
+              },
+            ],
+          },
+          {
+            id: 'desengate',
+            title: 'Desengate',
+            steps: [
+              {
+                id: 1,
+                instruction:
+                  'Iremos fazer a mesma rota para engatar um veículo no sistema.',
+                image: '/images/Engate/veiculos.jpeg',
+              },
+              {
+                id: 2,
+                instruction:
+                  'Para desengatar devemos apenas excluir o registro de engate antes inserido na mesma tela. Buscamos o cavalo que acabou de ser engatado em uma determinada carreta e exluimos o seu registro.',
+                image: '/images/Engate/buscacavalo.jpeg',
+              },
+              {
+                id: 3,
+                instruction:
+                  'Se houver registro de Engate assim que a placa for buscada, o sistema irá preencher a linha no topo da tela, iremos excluir e salvar e o processo estará finalizado.',
+                image: '/images/Engate/desengate.jpeg',
+              },
+            ],
+          },
+        ],
       },
       {
         id: 'transf',
@@ -314,6 +592,32 @@ const database = {
           {
             id: 'transferencia',
             title: 'Transferência de Terceiros/Agregados',
+            steps: [
+              {
+                id: 1,
+                instruction:
+                  'Quando algum terceiro/agregado já tem viagem no sistema registrada e por algum engano ele foi cadastrado em um fornecedor errado, ou até mesmo esse terceiro/agregado trocou de fornecedor, é por esse caminho que faremos a transferência.',
+                image: '/images/Transferencia/caminho.jpeg',
+              },
+              {
+                id: 2,
+                instruction:
+                  'Iremos incluir uma coluna nova, buscar um veículo pela placa e aplicar para que o processo se inicie.',
+                image: '/images/Transferencia/veiculo.jpeg',
+              },
+              {
+                id: 3,
+                instruction:
+                  'Após a seleção do veículo, partiremos para a coluna de Agregado/Terceiro Destino, coluna essa que deverá ser preenchida o novo fornecedor que esse veículo fará a transferência. Basta buscar ele pelo nome e aplicar as informações.',
+                image: '/images/Transferencia/agregado.jpeg',
+              },
+              {
+                id: 4,
+                instruction:
+                  'Para finalizar a operação, basta conferir as informações selecionadas e clicar em salvar no rodapé da tela.',
+                image: '/images/Transferencia/salvar.jpeg',
+              },
+            ],
           },
         ],
       },
