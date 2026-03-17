@@ -688,8 +688,59 @@ const database = {
         id: 'consulcte',
         title: 'Consulta de CT-e',
         operations: [
-          { id: 'consulta-cte', title: 'Consulta de CT-e total' },
-          { id: 'consulta-cte-p', title: 'Consulta de CT-e com parâmetros' },
+          {
+            id: 'consulta-cte',
+            title: 'Consulta de CT-e total',
+            steps: [
+              {
+                id: 1,
+                instruction:
+                  'Há muitas opções de consultar e extrair relatórios de muitas funcionalidades em avulso. Uma delas é o CT-e. Conseguimos tanto uma consulta geral, quanto uma consulta com parâmetros.',
+                image: '/images/Consulcte/caminho.jpeg',
+              },
+              {
+                id: 2,
+                instruction:
+                  'É importante ter em mente que, uma consulta sem parâmetros, sem filtros, implicará em uma consulta completamente lenta, mas trará todos os resultados independente da data, do tipo, da emissão e afins...',
+              },
+              {
+                id: 3,
+                instruction:
+                  'Assim que a tela for acessada, basta apenas dois cliques e conseguiremos todos puxar um relatório completo de todos os documentos emitidos.',
+                image: '/images/Consulcte/busca.jpeg',
+              },
+              {
+                id: 4,
+                instruction:
+                  'Logo após a consulta, aparecerá uma mensagem informativa muito importante, e no meio da mensagem, aparecerá o númeoro de registros que o relatório irá extrair, basta apenas se atentar e estar de acordo ao puxar todos os registros de uma vez.',
+                image: '/images/Consulcte/yes.jpeg',
+              },
+              {
+                id: 5,
+                instruction:
+                  'Após a consulta ser concluída, é possível em todos os relatórios, clicando com o segundo botão em qualquer célula, trará opções de salvamento, podendo extrair em .xlsx ou .xls, extensões do excel.',
+                image: '/images/Consulcte/relatorio.jpeg',
+              },
+            ],
+          },
+          {
+            id: 'consulta-cte-p',
+            title: 'Consulta de CT-e com parâmetros',
+            steps: [
+              {
+                id: 1,
+                instruction:
+                  'Para utilizarmos a consulta com parâmetros, utilizaremos o mesmo caminho para chegar nos relatórios.',
+                image: '/images/Consulcte/caminho.jpeg',
+              },
+              {
+                id: 2,
+                instruction:
+                  'Assim que acessado a tela, tomaremos rumos diferentes com relação ao relatório de documentos gerais. Chegando aqui, poderemos clicar em CONFIGURAR, no canto inferior da tela. Essa é a ferramenta para que passemos a infinidade de parâmetros para a busca.',
+                image: '/images/Consulcte/config.jpeg',
+              },
+            ],
+          },
         ],
       },
       {
