@@ -502,7 +502,65 @@ const database = {
               },
             ],
           },
-          { id: 'cadastro-clientes', title: 'Cadastro de Clientes' },
+          {
+            id: 'cadastro-clientes',
+            title: 'Cadastro de Clientes',
+            steps: [
+              {
+                id: 1,
+                instruction:
+                  'Para cadastrar um Cliente que não possui cadastro ativo no sistema, devemos localizar as informações pertinentes a ele e acessar o módulo comercial, local onde possui o caminho para cadastros.',
+                image: '/images/CadastroCli/caminho.jpeg',
+              },
+              {
+                id: 2,
+                instruction:
+                  'O Cadastro é divido em dois caminhos, e você deve saber qual caminho seguir, antes de acessar os cadastros. Para o cadastro ser considerado de Cliente, ele deve ser um ponto de origem ou destino para finalidade do transporte.',
+              },
+              {
+                id: 3,
+                instruction:
+                  'Esse cliente tem a possibilidade de ser pessoa física ou pessoa jurídica. Independente da situação, deve-se marcar no canto superior esquerdo.',
+                image: '/images/CadastroCli/incluir.jpeg',
+              },
+              {
+                id: 4,
+                instruction:
+                  'Se o Cliente for pessoa jurídica, o cadastro fica bem mais simplificado, pois o sistema utiliza de uma API que conversa com o aplicativo da receita federal que nos permite pesquisar o CNPJ digitado SE ele existir.',
+                image: '/images/CadastroCli/cnpj.jpeg',
+              },
+              {
+                id: 5,
+                instruction:
+                  'Assim que o campo do CNPJ for preenchido de acordo com o CNPJ do Cliente, o botão de busca ficará habilitado e irá buscar exatamente o CNPJ mencionado no campo.',
+                image: '/images/CadastroCli/buscacnpj.jpeg',
+              },
+              {
+                id: 6,
+                instruction:
+                  'Se o CNPJ digitado for encontrado, basta clicar em aplicar, que todas as informações de cadastro serão preenchidas automaticamente. Exceto a Inscrição Estadual, um dos campos mais cruciais que evitará um futuro erro na hora de emitir o CT-e.',
+                image: '/images/CadastroCli/buscacnpj2.jpeg',
+              },
+              {
+                id: 7,
+                instruction:
+                  'Alguns campos além da Inscrição Estadual, terão que ser preenchidos manualmente que são devidamente muito importantes para a finalização do cadastro. Sendo eles: A classificação, que nesse caso é Cliente, o checkbox Contribuinte ICMS só deverá ser marcado aos cadastros que possuírem uma Inscrição Estadual e a Situação Atual que, para todos os clientes/fornecedores, poderemos informar CORRENTE.',
+                image: '/images/CadastroCli/info.jpeg',
+              },
+              {
+                id: 8,
+                instruction:
+                  'Se o Cliente for pessoa física, o cadastro passa a ser mais manual, porém, nada mais complicado, apenas com informações a serem preenchidas manualmente. E aí entra não só o CPF, como também, as informações de localização do fornecedor.',
+                image: '/images/CadastroCli/cpf.jpeg',
+              },
+              {
+                id: 9,
+                instruction:
+                  'Por fim, iremos clicar em salvar no rodapé da tela, para as informações se concretizarem. Sendo assim o cadastro de clientes está finalizado.',
+                image: '/images/CadastroCli/salvar.jpeg',
+              },
+            ],
+          },
         ],
       },
       {
