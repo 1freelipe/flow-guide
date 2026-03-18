@@ -170,7 +170,7 @@ const database = {
                     id: 30,
                     instruction:
                       'Para autorizarmos, iremos clicar em MARCAR TODOS novamente, e <strong>EMITIR CTE</strong>. Repare que na coluna: Sit. Atual SEFAZ, deverá conter a informação: <strong>Autorizado</strong>. Se sim, está tudo certo e o processo finaliza por aqui.',
-                    images: '/images/ODT/cte.jpeg',
+                    image: '/images/ODT/cte.jpeg',
                   },
                 ],
               },
@@ -706,13 +706,13 @@ const database = {
               {
                 id: 3,
                 instruction:
-                  'Assim que a tela for acessada, basta apenas dois cliques e conseguiremos todos puxar um relatório completo de todos os documentos emitidos.',
+                  'Assim que a tela for acessada, basta apenas dois cliques e conseguiremos puxar um relatório completo de todos os documentos emitidos.',
                 image: '/images/Consulcte/busca.jpeg',
               },
               {
                 id: 4,
                 instruction:
-                  'Logo após a consulta, aparecerá uma mensagem informativa muito importante, e no meio da mensagem, aparecerá o númeoro de registros que o relatório irá extrair, basta apenas se atentar e estar de acordo ao puxar todos os registros de uma vez.',
+                  'Logo após a consulta, aparecerá uma mensagem informativa muito importante, e no meio da mensagem, aparecerá o número de registros que o relatório irá extrair, basta apenas se atentar e estar de acordo ao puxar todos os registros de uma vez.',
                 image: '/images/Consulcte/yes.jpeg',
               },
               {
@@ -739,6 +739,41 @@ const database = {
                   'Assim que acessado a tela, tomaremos rumos diferentes com relação ao relatório de documentos gerais. Chegando aqui, poderemos clicar em CONFIGURAR, no canto inferior da tela. Essa é a ferramenta para que passemos a infinidade de parâmetros para a busca.',
                 image: '/images/Consulcte/config.jpeg',
               },
+              {
+                id: 3,
+                instruction:
+                  'Assim que o botão for pressionado, uma pequena janela será aberta no centro da tela com duas abas acima, essas duas abas deverão ser utilizadas para passar os parâmetros.',
+                image: '/images/Consulcte/parametros.jpeg',
+              },
+              {
+                id: 4,
+                instruction:
+                  'Parâmetros de pesquisa serve para ser decidido o que vai ser buscado no banco de dados, ao exemplo de uma data de emissão, de um número de fatura específico, de um número de CT-e específico, ou de vários números de CT-es... É um offset para o banco de dados.',
+              },
+              {
+                id: 5,
+                instruction:
+                  'Já as configurações de saída, é o que exatamente eu preciso ver ao buscar o determinado CT-e ou os vários CT-es, nessa aba eu consigo definir a quantidade de colunas que será puxada, a posição das colunas, se uma delas será a determinante, entre muitas outras opções. Basta apenas selecionar as definições e aplicar.',
+                image: '/images/Consulcte/definicoes.jpeg',
+              },
+              {
+                id: 6,
+                instruction:
+                  'Também é possível deixar tudo marcado para um busca muito mais profunda, ou demarcar tudo e manter uma ou duas opções marcadas.',
+                image: '/images/Consulcte/tudoounada.jpeg',
+              },
+              {
+                id: 7,
+                instruction:
+                  'Nesse caso, é puxado um relatório de CT-es com as determinantes escolhidas e utilizando uma data específica nos parâmetros de pesquisa.',
+                image: '/images/Consulcte/pesquisa.jpeg',
+              },
+              {
+                id: 8,
+                instruction:
+                  'Ao buscar, ele me trará todas as colunas que eu demarquei nos parâmetros de busca e exatamente a data que eu demarquei nos parâmetros de pesquisa. Note que, também é possível exportar esse relatório clicando com o segundo botão em cima de qualquer célula, para as extensões do excel se necessário.',
+                image: '/images/Consulcte/relatorio2.jpeg',
+              },
             ],
           },
         ],
@@ -747,27 +782,192 @@ const database = {
         id: 'consulmdf',
         title: 'Consulta de MDF-e',
         operations: [
-          { id: 'consulta-mdf', title: 'Consulta de MDF-e total' },
-          { id: 'consulta-mdf-p', title: 'Consulta de MDF-e com parâmetro' },
+          {
+            id: 'consulta-mdf',
+            title: 'Consulta de MDF-e total',
+            steps: [
+              {
+                id: 1,
+                instruction:
+                  'Há muitas opções de consultar e extrair relatórios de muitas funcionalidades em avulso. Uma delas é o MDF-e. Conseguimos tanto uma consulta geral, quanto uma consulta com parâmetros.',
+                image: '/images/Consulmdf/caminho.jpeg',
+              },
+              {
+                id: 2,
+                instruction:
+                  'É importante ter em mente que, uma consulta sem parâmetros, sem filtros, implicará em uma consulta completamente lenta, mas trará todos os resultados independente da data, do tipo, da emissão e afins...',
+              },
+              {
+                id: 3,
+                instruction:
+                  'Assim que a tela for acessada, basta apenas dois cliques e conseguiremos puxar um relatório completo de todos os documentos emitidos.',
+                image: '/images/Consulmdf/consulta.jpeg',
+              },
+              {
+                id: 4,
+                instruction:
+                  'Após a consulta ser concluída, é possível em todos os relatórios, clicando com o segundo botão em qualquer célula, trará opções de salvamento, podendo extrair em .xlsx ou .xls, extensões do excel.',
+                image: '/images/Consulmdf/relatorio.jpeg',
+              },
+            ],
+          },
+          {
+            id: 'consulta-mdf-p',
+            title: 'Consulta de MDF-e com parâmetro',
+            steps: [
+              {
+                id: 1,
+                instruction:
+                  'Para utilizarmos a consulta com parâmetros, utilizaremos o mesmo caminho para chegar nos relatórios.',
+                image: '/images/Consulmdf/caminho.jpeg',
+              },
+              {
+                id: 2,
+                instruction:
+                  'Assim que acessado a tela, tomaremos rumos diferentes com relação ao relatório de documentos gerais. Chegando aqui, poderemos clicar em CONFIGURAR, no canto inferior da tela. Essa é a ferramenta para que passemos a infinidade de parâmetros para a busca.',
+                image: '/images/Consulmdf/configuracao.jpeg',
+              },
+              {
+                id: 3,
+                instruction:
+                  'Assim que o botão for pressionado, uma pequena janela será aberta no centro da tela com duas abas acima, essas duas abas deverão ser utilizadas para passar os parâmetros.',
+                image: '/images/Consulmdf/parametros.jpeg',
+              },
+              {
+                id: 4,
+                instruction:
+                  'Parâmetros de pesquisa serve para ser decidido o que vai ser buscado no banco de dados, ao exemplo de uma data de emissão, de um número de fatura específico, de um número de CT-e específico, ou de vários números de CT-es... É um offset para o banco de dados.',
+              },
+              {
+                id: 5,
+                instruction:
+                  'Já as configurações de saída, é o que exatamente eu preciso ver ao buscar o determinado CT-e ou os vários CT-es, nessa aba eu consigo definir a quantidade de colunas que será puxada, a posição das colunas, se uma delas será a determinante, entre muitas outras opções. Basta apenas selecionar as definições e aplicar.',
+                image: '/images/Consulmdf/determinantes.jpeg',
+              },
+              {
+                id: 6,
+                instruction:
+                  'Também é possível deixar tudo marcado para um busca muito mais profunda, ou demarcar tudo e manter uma ou duas opções marcadas.',
+                image: '/images/Consulmdf/tudoounada.jpeg',
+              },
+              {
+                id: 7,
+                instruction:
+                  'O exemplo utilizado é puxado um relatório com as determinantes escolhidas e como parâmetro de pesquisa, foi utilizado todos os MDF-es que estão com o status "Autorizado"',
+                image: '/images/Consulmdf/busca.jpeg',
+              },
+              {
+                id: 8,
+                instruction:
+                  'O relatório assim que carregado, trará todas as informações que foram determinadas nos parâmetros de busca, com todas as colunas escolhidas e todas as informações relacionadas. Note que, ao clicar com o segundo botão em cima de qualquer célula, é possível extrair esse relatório para xls ou xlsx, extensões do excel por exemplo.',
+                image: '/images/Consulmdf/relatorio2.jpeg',
+              },
+            ],
+          },
         ],
       },
       {
         id: 'consultciot',
         title: 'Consulta de CIOT',
-        operations: [{ id: 'consulta-ciot', title: 'Consulta de CIOT' }],
+        operations: [
+          {
+            id: 'consulta-ciot',
+            title: 'Consulta de CIOT',
+            steps: [
+              {
+                id: 1,
+                instruction:
+                  'Para extrair ou consultar um relatório de CIOTs, o caminho é o mesmo já utilizado nos outros relatórios, mas com seu caminho relativo diferente no final.',
+                image: '/images/Consulciot/caminho.jpeg',
+              },
+              {
+                id: 2,
+                instruction:
+                  'Ao entrar na tela de consultas, é possível extrair um relatório completo de todos os CIOTs que já foram emitidos, cancelados ou com alguma outra situação, clicando no botão direto de consultar. Basta lembrar que, consultas sem parâmetros, resultam em consultas muito lentas baseado na quantidade de documentos emitidos no sistema.',
+              },
+              {
+                id: 3,
+                instruction:
+                  'Já para uma consulta com parâmetros de busca e configurações de saída, podemos acessar o botão no canto inferior esquerdo, em "Configurar".',
+                image: '/images/Consulciot/configurar.jpeg',
+              },
+              {
+                id: 4,
+                instruction:
+                  'Aqui possuímos dois caminhos para facilitar o relatório final, as duas abas no topo da tela conduz o relatório resultante.',
+              },
+              {
+                id: 5,
+                instruction:
+                  'Em parâmetros de pesquisa, conseguimos filtrar apenas as informações que queremos, ao exemplo de datas de emissões, números específicos, destinatários específicos, entre diversos outros parâmetros.',
+                image: '/images/Consulciot/parametros.jpeg',
+              },
+              {
+                id: 6,
+                instruction:
+                  'Já na segunda aba, contamos com as configurações de saída, ou seja, as colunas que irão determinar nossa busca final. Pode ter uma ou diversas outras colunas dependendo da finalidade do seu relatório.',
+                image: '/images/Consulciot/determinantes.jpeg',
+              },
+              {
+                id: 7,
+                instruction:
+                  'Vale ressaltar que, ao carregar o relatório por completo com as configurações determinadas, clicando com o botão direito do mouse em qualquer célula do relatório, poderemos extrair ele para .xls ou .xlsx, extensões do excel.',
+              },
+            ],
+          },
+        ],
       },
       {
         id: 'ferramentas',
         title: 'Ferramentas',
         operations: [
-          { id: 'consul-nfe', title: 'Consulta e Validação de NF-e' },
-          { id: 'consul-cte', title: 'Consulta de CT-e no sefaz' },
+          {
+            id: 'consul-nfe',
+            title: 'Consulta e Validação de NF-e',
+            steps: [
+              {
+                id: 1,
+                instruction:
+                  'No sistema também há a possibilidade de consultar uma Nota fiscal e verificar a veracidade dela, além de, consultar também se ela foi cancelada ou está autorizada o uso dela. Utilizamos o caminho abaixo para fazer essa consulta',
+                image: '/images/Consulnfe/caminhonf.jpeg',
+              },
+              {
+                id: 2,
+                instruction:
+                  'Acessando esse caminho, irá aparecer uma janela em branco com um campo logo acima para pesquisar, basta apenas mencionarmos a chave de acesso completa da nota fiscal, contendo os 44 números e consultar.',
+                image: '/images/Consulnfe/resultadonfe.jpeg',
+              },
+              {
+                id: 3,
+                instruction:
+                  'É bastante importante que essa númeração esteja correta, caso contrário, ele trára apenas uma linha com o informativo de que a nota não existe. Bastante utilizado, caso seja necessário constatar se o número da nota fiscal está correta antes de inserir em algum documento.',
+              },
+            ],
+          },
+          {
+            id: 'consul-cte',
+            title: 'Consulta de CT-e no sefaz',
+            steps: [
+              {
+                id: 1,
+                instruction:
+                  'O sistema também nos permite consultar algum CT-e utilizando uma das ferramentas também implementadas para consultas. Ele faz uma integração diretamente com o Sefaz (Secretaria da Fazenda), possibilitando o retorno do informativo se o documento está ou não está autorizado o uso e a circulação. Acessando o caminho mencionado abaixo.',
+                image: '/images/Consulnfe/caminhocte.jpeg',
+              },
+              {
+                id: 2,
+                instruction:
+                  'Acessando o caminho informado, uma tela em branco irá aparecer com alguns campos para pesquisa acima, o que nós precisamos, é da chave de acesso do CT-e, composta por 44 dígitos. Basta apenas informar essa chave no campo em aberto e clicar em consultar. ',
+                image: '/images/Consulnfe/resultadocte.jpeg',
+              },
+              {
+                id: 3,
+                instruction:
+                  'Devemos estar cientes de que, qualquer dígito informado seja inválido, o retorno da consulta trará apenas uma linha com o informativo de que o CT-e não foi encontrado na base de dados do sefaz. Bastante utilizado em documentos de subcontratação, onde devemos informar a chave do CT-e anterior... Utilizamos essa área para verificar a autenticidade da chave informada.',
+              },
+            ],
+          },
         ],
-      },
-      {
-        id: 'fatura',
-        title: 'Faturas',
-        operations: [{ id: 'faturas', title: 'Consulta de Faturas total' }],
       },
     ],
   },
